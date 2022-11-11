@@ -107,9 +107,7 @@ a {
   color: var(--first-color);
 }
 
-.container, .item, .count{
-  vertical-align: inherit;
-}
+
 
 .nav__logo, 
 .nav__toggle, 
@@ -166,21 +164,6 @@ a {
   position: relative;
 }
 
-.nav__shop .count {
-  position: absolute;
-  bottom: 0px;
-  right: -7px;
-  width: 16px;
-  height: 16px;
-  padding: .25rem;
-  background-color: var(--title-color);
-  border-radius: 50%;
-  font-size: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--body-color);
-}
 
 @media screen and (max-width: 767px) {
   .nav__menu {
@@ -193,6 +176,7 @@ a {
     transition: .3s;
   }
 }
+
 .nav__menu-show{
   right: 0;
   background-color: #fff;
@@ -236,26 +220,52 @@ a {
   transform: translateX(100%);
   position: fixed;
   right: 0;
-  top: 10px;
-  background-image: url(/img/empty-cart.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 350px;
-}
-.shopBag h2{
-  margin-top: 100px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
+  overflow: scroll;
+  align-items: center;
 }
-.shopBag h3{
-  margin-top: 350px;
-  text-align: center;
+
+.shopItems{
+  width: 100%;
+  height: 50%;
+  display:flex;
+  justify-content: center;
 }
-.shopBag .price{
-  margin-top: 60px;
-  text-align: center;
+.totalShop{
+  height: 10%;
+  margin-bottom: 50px;
+  margin-top: 130px;
 }
+.shopGeneral{
+  height: 20%;
+}
+
+
 .shopBag-show{
   transform: translateX(0%);
+}
+.shopItems img{
+  width: 40%;
+  height: 40%;
+}
+.shopGeneral{
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  width: auto;
+  height: 80%;
+  margin-top: 50px;
+}
+.totalShop{
+  width: 5%;
+  height: 5%;
+}
+.empyCart img{
+  max-width: 100%;
 }
 
 
@@ -359,6 +369,7 @@ a {
 .content3 .boton2 h3{
   color: black;
 }
+
 .content3 .boton4{
   margin-left: -40px;
   border: none;
@@ -430,6 +441,8 @@ a {
     cursor: pointer;
     color: #fff;
     border-radius: 50%;
+    border: none;
+    position: relative;
 }
 
 .content5{
@@ -516,41 +529,30 @@ a {
 }
 
 
-
 @media only screen and (min-width: 800px){
-  
+
   .shopBag{
     width: 30%;
-    height: 100%;
+    height: 98%;
     background-color: #fff;
     transform: translateX(100%);
     position: fixed;
     right: 0;
     top: 10px;
-    background-image: url(/img/empty-cart.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 350px;
+    display: flex;
+    flex-direction: column;
   }
-  .shopBag h2{
-    margin-top: 100px;
-    text-align: center;
+  .shopItems{
+    width: 80%;
+    height: 80%;
   }
-  .shopBag h3{
-    margin-top: 350px;
-    text-align: center;
-  }
-  .shopBag .price{
-    margin-top: 60px;
-    text-align: center;
-  }
+
   .shopBag-show{
     transform: translateX(0%);
   }
-  
-
+ 
   .header{
-    height: 80px;
+    height: 60px;
     font-size: 20px;
   }
 
@@ -666,6 +668,7 @@ a {
     margin: 0;
     margin-top: 35px;
     margin-left: -150px;
+    cursor: pointer;
 }
 
 .content4 .botonSecond{
@@ -710,8 +713,6 @@ a {
 }
 }
 
-
-
 @media screen and (min-width: 800px) {
 
   .nav {
@@ -737,8 +738,6 @@ a {
 
 }
 
-
-
 @media screen and (min-width: 1024px) {
   .container {
     margin-left: auto;
@@ -755,9 +754,11 @@ body.dark{
   background-color:   hsl(249, 19%, 14%);
   color: #fff;
 }
+
 .dark .nav__menu-show{
   background-color:  hsl(246, 16%, 12%); 
 }
+
 .dark .Vector{
     background-color:  hsl(182, 53%, 74%);
 }
@@ -838,13 +839,11 @@ body.dark{
   color: #fff;
 }
 
-.dark .count{
-  background-color: #fff;
-  color: black;
-}
-
 .dark .nav__logo img{
   background-color:  hsl(182, 53%, 74%);
+}
+.dark .shopGeneral{
+  color: #fff;
 }
 
 .shop, .close , .toggle{
@@ -854,4 +853,9 @@ body.dark{
   width: 30px;
   height: 30px;
   font-size: 20px;
+}
+
+.empyCart img {
+  height: auto;
+  width: auto;
 }
